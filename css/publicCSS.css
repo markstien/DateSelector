@@ -1,0 +1,17 @@
+.pointer{
+    cursor: pointer;
+}
+.padding-none{
+    padding: 0;
+}
+div.mdui-typo-caption-opacity{
+    font-size: 13px;
+    flex: revert;
+}
+.mdui-table td, .mdui-table th{
+    padding: 15px 10px;
+    cursor: pointer;
+}
+.mdui-table td:hover{
+    color: red;
+}

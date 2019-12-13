@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<button id="b">click me</button>
+<script>
+    const getDate=function () {
+        const b=document.getElementById("b");
+        b.addEventListener('click',function () {
+            return new Promise(resolve => {
+                resolve("clicked");
+            })
+        });
+
+    };
+    getDate().then(console.log);
+</script>
+</body>
+</html>
