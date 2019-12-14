@@ -31,7 +31,7 @@ const getSelectedDate=function () {
   })
 };
 const DateSelector=function () {
-    console.log("DateSelector 0.0.2");
+    console.log("DateSelector 开发中版本0.0.2");
     //注册对话框
     const el=template(365);
     const dialog=new mdui.Dialog(el);

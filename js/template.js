@@ -1,16 +1,18 @@
 import {calendarTables} from "./CalendarTables";
+import {getIds} from "./hashid";
 
 const template=function (days) {
+  const [check,show,menu,cancel]=getIds(4);
   const toolbar=`<div class="mdui-appbar">
         <div class="mdui-toolbar ">
-          <a id="dsCheck" href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">check</i></a>
-          <a href="javascript:;" class="mdui-typo-body-2"><span id="dsDisplayDate">2019年11月22日</span></a> 
+          <a id="${check}" href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">check</i></a>
+          <a href="javascript:;" class="mdui-typo-body-2"><span id="${show}">2019年11月22日</span></a> 
           <div class="mdui-toolbar-spacer"></div>
-          <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#dsMenu'}" >
+          <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#${menu}'}" >
             <i class="mdui-icon material-icons">more_vert</i>
           </a>
-          <ul class="mdui-menu" id="dsMenu">
-              <li id="dsCancel" class="mdui-menu-item">
+          <ul class="mdui-menu" id="${menu}">
+              <li id="${cancel}" class="mdui-menu-item">
                 <a href="javascript:;" class="mdui-ripple">取消</a>
               </li>
           </ul>
@@ -47,7 +49,10 @@ const template=function (days) {
   container.innerHTML+=toolbar;
   container.innerHTML+=main;
 
-  return container;
+  return {
+      container,
+      check,show,menu,cancel
+  }
 };
 
 export {template}
