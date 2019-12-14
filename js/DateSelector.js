@@ -36,7 +36,7 @@ class DateSelector {
         //注册对话框
         const dialog=new mdui.Dialog(container);
         this._dialog=dialog;
-        this.open();
+
 
         cancelT(cancel,dialog);
         showT(show,container);
@@ -44,6 +44,9 @@ class DateSelector {
     }
     open(){
         this._dialog.open();
+    }
+    close(){
+        this._dialog.close();
     }
     getSelectedDate(callback) {
         const show=document.getElementById(this._show);
