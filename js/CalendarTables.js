@@ -115,7 +115,7 @@ const calendarTables=function (days) {
                 }
                 //日
                 for(let y=0;y<weeks[x].length;y++){
-                    weekTemple+=`<td data-date="${weeks[x][y].year}年${weeks[x][y].month}月${weeks[x][y].day}日">${weeks[x][y].day}</td>`;
+                    weekTemple+=`<td data-date="${weeks[x][y].year}-${weeks[x][y].month}-${weeks[x][y].day}">${weeks[x][y].day}</td>`;
                     if(y===weeks[x].length-1&&weeks[x][y].weekDay!==6){
                         for(let b=6;b>weeks[x][y].weekDay;b--){
                             weekTemple+=`<td ></td>`;

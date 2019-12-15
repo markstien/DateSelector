@@ -1,16 +1,14 @@
+//接口
+//import {DateSelector} from "./js/DateSelector";
+//exports.DateSelector=DateSelector;
+
+/*
+//开发
 import {DateSelector} from "./js/DateSelector";
 
 window.addEventListener("load",function () {
-    const a=new DateSelector();
-    const b=new DateSelector();
-
-    a.open();
-    a.getSelectedDate(function () {
-        console.log("a");
-        a.close();
-        b.open();
-    })
-    b.getSelectedDate(function () {
-        console.log("b");
-    })
-});
+    const ds1=new DateSelector();
+    ds1.getSelectedDate(function (date) {
+        console.log(date);
+    });
+});*/

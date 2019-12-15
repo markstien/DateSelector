@@ -1,12 +1,28 @@
 import {calendarTables} from "./CalendarTables";
 import {getIds} from "./hashid";
+import {getDayTil} from "./untils";
 
+/**
+ *
+ * @param days
+ * @returns {{
+ * container: HTMLElement,
+ * check: string,
+ * show: string,
+ * menu: string,
+ * cancel: string
+ * }}
+ */
 const template=function (days) {
+  const today=getDayTil(0);
+  const tomorrow=getDayTil(1);
+  const tomorrowAfter=getDayTil(2);
+
   const [check,show,menu,cancel]=getIds(4);
   const toolbar=`<div class="mdui-appbar">
         <div class="mdui-toolbar ">
           <a id="${check}" href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">check</i></a>
-          <a href="javascript:;" class="mdui-typo-body-2"><span id="${show}">2019年11月22日</span></a> 
+          <a href="javascript:;" class="mdui-typo-body-2"><span id="${show}">${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}</span></a> 
           <div class="mdui-toolbar-spacer"></div>
           <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#${menu}'}" >
             <i class="mdui-icon material-icons">more_vert</i>
@@ -21,19 +37,22 @@ const template=function (days) {
   const main=`<div class="mdui-dialog-content padding-none">
         <ul class="mdui-list">
             <li class="mdui-list-item mdui-ripple">
-                <div class="mdui-list-item-content ">
+                <div class="mdui-list-item-content " data-date="${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}">
                     <i class="mdui-list-item-icon mdui-icon material-icons">date_range</i>
                     今天
                 </div>
-                    <div class="mdui-list-item-content   mdui-typo-caption-opacity" >(周三)</div>
+                    <div class="mdui-list-item-content   mdui-typo-caption-opacity" >${today.getDay()+1}</div>
             </li>
-            <li class="mdui-list-item mdui-ripple">
-                <div class="mdui-list-item-content"><i class="mdui-list-item-icon mdui-icon material-icons">wb_sunny</i>明天</div>
-                <div class="mdui-list-item-content mdui-typo-caption-opacity ">(周三)</div>
+            <li class="mdui-list-item mdui-ripple" >
+                <div class="mdui-list-item-content" data-date="${tomorrow.getFullYear()}-${tomorrow.getMonth()+1}-${tomorrow.getDate()}"><i class="mdui-list-item-icon mdui-icon material-icons">wb_sunny</i>明天</div>
+                <div class="mdui-list-item-content mdui-typo-caption-opacity ">${tomorrow.getDay()+1}</div>
             </li>
-            <li class="mdui-list-item mdui-ripple">
-                <div class="mdui-list-item-content"><i class="mdui-list-item-icon mdui-icon material-icons">subdirectory_arrow_right</i>下周</div>
-                <div class="mdui-list-item-content mdui-typo-caption-opacity ">(周三)</div>
+            <li class="mdui-list-item mdui-ripple" >
+                <div class="mdui-list-item-content" data-date="${tomorrowAfter.getFullYear()}-${tomorrowAfter.getMonth()+1}-${tomorrowAfter.getDate()}">
+                  <i class="mdui-list-item-icon mdui-icon material-icons">subdirectory_arrow_right</i>
+                  后天
+                </div>
+                <div class="mdui-list-item-content mdui-typo-caption-opacity ">${tomorrowAfter.getDay()+1}</div>
             </li>
         </ul>
         <div class="mdui-table-fluid" style="width: 99%">

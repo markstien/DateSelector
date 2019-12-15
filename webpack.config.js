@@ -54,7 +54,7 @@ module.exports={
     devServer: {
       contentBase:"./dist",
         compress: true,
-        port: 8080,
+        port: 9090,
         disableHostCheck: true
     },
     output: {

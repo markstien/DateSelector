@@ -1,4 +1,4 @@
-import * as mdui from '../node_modules/mdui/dist/js/mdui.min';
+import * as mdui from '../node_modules/_mdui@0.4.3@mdui/dist/js/mdui.min';
 import "../node_modules/mdui/dist/css/mdui.min.css";
 import '../css/publicCSS.css';
 import {template} from "../js/template";
@@ -17,7 +17,7 @@ const showT=function (show,container) {
         const element=event.target;
         const date=element.getAttribute("data-date");
 
-        element.tagName==="TD"&&date!==null?s.innerHTML=date:0;
+        date!==null?s.innerHTML=date:0;
     };
     container.addEventListener("click",handler);
 };
