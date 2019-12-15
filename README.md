@@ -25,9 +25,9 @@
 
 
 ```javascript
-const {DataSelector}=require('./DataSelector');
+const {DateSelector}=require('./DateSelector');
 window.addEventListener("load",function () {
-    const ds=new DataSelector();
+    const ds=new DateSelector();
     ds.open();
     ds.getSelectedDate(function (date) {
        ds.close();
@@ -36,3 +36,14 @@ window.addEventListener("load",function () {
 });
 ```
 
+## 文档
+
+DateSelector暴露了三个方法
+
+1.  open()
+
+打开日期选择器对话框
+
+2.close()
+
+关闭日期选择器对话框

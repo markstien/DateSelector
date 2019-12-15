@@ -14,7 +14,7 @@ window.addEventListener("load",function () {
 });*/
 
 //使用
-const {DataSelector}=require('./DataSelector');
+const {DataSelector}=require('./DateSelector');
 window.addEventListener("load",function () {
     const ds=new DataSelector();
     ds.open();
