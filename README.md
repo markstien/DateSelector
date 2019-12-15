@@ -1,4 +1,4 @@
-# [DateSelector](./index.html)
+# [DateSelector](https://marksteinsong.github.io/DateSelector/)
 
 基于MDUI的一个简易日期选择器。
 
