@@ -13,13 +13,13 @@ window.addEventListener("load",function () {
     });
 });*/
 
-//使用
-const {DataSelector}=require('./DateSelector');
+//生产
+const {DateSelector}=require('./DateSelector');
 window.addEventListener("load",function () {
-    const ds=new DataSelector();
+    const ds=new DateSelector();
     ds.open();
     ds.getSelectedDate(function (date) {
-       ds.close();
-       alert(date);
+        ds.close();
+        alert(date);
     });
 });
