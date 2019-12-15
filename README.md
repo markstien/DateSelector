@@ -8,8 +8,8 @@
 
 
 
-# 截图
+### 截图
 
-![](C:\Users\Marks\Desktop\dateSelctor\images\pc.PNG)
+![](./images/pc.PNG)
 
-![](C:\Users\Marks\Desktop\dateSelctor\images\mobile.PNG)
+![](./images/mobile.PNG)
