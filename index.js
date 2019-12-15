@@ -16,10 +16,13 @@ window.addEventListener("load",function () {
 //生产
 const {DateSelector}=require('./DateSelector');
 window.addEventListener("load",function () {
-    const ds=new DateSelector();
-    ds.open();
-    ds.getSelectedDate(function (date) {
-        ds.close();
-        alert(date);
+    const button=document.getElementById("open");
+    button.addEventListener("click",function () {
+        const ds=new DateSelector();
+        ds.open();
+        ds.getSelectedDate(function (date) {
+            ds.close();
+            alert(date);
+        });
     });
 });
