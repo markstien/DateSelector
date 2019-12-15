@@ -1,4 +1,4 @@
-# DateSelector
+# [DateSelector](./index.html)
 
 基于MDUI的一个简易日期选择器。
 
@@ -38,12 +38,21 @@ window.addEventListener("load",function () {
 
 ## 文档
 
-DateSelector暴露了三个方法
+DateSelector类暴露了三个方法
 
-1.  open()
+#### 1.  open()
 
 打开日期选择器对话框
 
-2.close()
+#### 2.close()
 
 关闭日期选择器对话框
+
+#### 3 getSelectedDate(f)
+
+点击√后获取的日期，参数是回调函数。
+
+
+## License
+
+[MIT](LICENSE.md)
